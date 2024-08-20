@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🐒 Termoo dos Guri 🐒</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h2>Termo</h2>
+    </header>
+
+    <main>
+      <!-- inicio da div principal -->
+      
+      <div class="container">
+        <!------------------------------------------------------------------------------------->
+        <div class="linhaTentativa">
+          <!-- inicio da div tentativa 1 -->
+          <input type="text" enable maxlength="1" id="letter11" class="box" oninput="moveToNext(this, 'letter12')" />
+          <input type="text" enable maxlength="1" id="letter12" class="box" oninput="moveToNext(this, 'letter13')" />
+          <input type="text" enable maxlength="1" id="letter13" class="box" oninput="moveToNext(this, 'letter14')" />
+          <input type="text" enable maxlength="1" id="letter14" class="box" oninput="moveToNext(this, 'letter15')" />
+          <input type="text" enable maxlength="1" id="letter15" class="box" oninput="moveToNext(this, 'botaoTentativa')"/>
+        </div>
+        <!-- fim da div tentativa 1 -->
+        <!------------------------------------------------------------------------------------->
+        <div class="linhaTentativa">
+          <!-- inicio da div tentativa 2 -->
+          <input type="text" disabled maxlength="1" id="letter21" class="box" oninput="moveToNext(this, 'letter22')"/>
+          <input type="text" disabled maxlength="1" id="letter22" class="box" oninput="moveToNext(this, 'letter23')"/>
+          <input type="text" disabled maxlength="1" id="letter23" class="box" oninput="moveToNext(this, 'letter24')"/>
+          <input type="text" disabled maxlength="1" id="letter24" class="box" oninput="moveToNext(this, 'letter25')"/>
+          <input type="text" disabled maxlength="1" id="letter25" class="box" oninput="moveToNext(this, 'botaoTentativa')"/>
+        </div>
+        <!-- fim da div tentativa 2 -->
+        <!------------------------------------------------------------------------------------->
+        <div class="linhaTentativa">
+          <!-- inicio da div tentativa 3 -->
+          <input type="text" disabled maxlength="1" id="letter31" class="box" oninput="moveToNext(this, 'letter32')"/>
+          <input type="text" disabled maxlength="1" id="letter32" class="box" oninput="moveToNext(this, 'letter33')"/>
+          <input type="text" disabled maxlength="1" id="letter33" class="box" oninput="moveToNext(this, 'letter34')"/>
+          <input type="text" disabled maxlength="1" id="letter34" class="box" oninput="moveToNext(this, 'letter35')"/>
+          <input type="text" disabled maxlength="1" id="letter35" class="box" oninput="moveToNext(this, 'botaoTentativa')"/>
+        </div>
+        <!-- fim da div tentativa 3 -->
+        <!------------------------------------------------------------------------------------->
+        <div class="linhaTentativa">
+          <!-- inicio da div tentativa 4 -->
+          <input type="text" disabled maxlength="1" id="letter41" class="box" oninput="moveToNext(this, 'letter42')"/>
+          <input type="text" disabled maxlength="1" id="letter42" class="box" oninput="moveToNext(this, 'letter43')"/>
+          <input type="text" disabled maxlength="1" id="letter43" class="box" oninput="moveToNext(this, 'letter44')"/>
+          <input type="text" disabled maxlength="1" id="letter44" class="box" oninput="moveToNext(this, 'letter45')"/>
+          <input type="text" disabled maxlength="1" id="letter45" class="box"  oninput="moveToNext(this, 'botaoTentativa')"/>
+        </div>
+        <!-- fim da div tentativa 4 -->
+        <!------------------------------------------------------------------------------------->
+        <div class="linhaTentativa">
+          <!-- inicio da div tentativa 5 -->
+          <input type="text" disabled maxlength="1" id="letter51" class="box" oninput="moveToNext(this, 'letter52')"/>
+          <input type="text" disabled maxlength="1" id="letter52" class="box" oninput="moveToNext(this, 'letter53')"/>
+          <input type="text" disabled maxlength="1" id="letter53" class="box" oninput="moveToNext(this, 'letter54')"/>
+          <input type="text" disabled maxlength="1" id="letter54" class="box" oninput="moveToNext(this, 'letter55')"/>
+          <input type="text" disabled maxlength="1" id="letter55" class="box" oninput="moveToNext(this, 'botaoTentativa')" />
+        </div>
+        <!-- fim da div tentativa 5 -->
+        <!------------------------------------------------------------------------------------->
+        <div class="linhaTentativa">
+          <!-- inicio da div tentativa 6 -->
+          <input type="text" disabled maxlength="1" id="letter61" class="box" oninput="moveToNext(this, 'letter62')"/>
+          <input type="text" disabled maxlength="1" id="letter62" class="box" oninput="moveToNext(this, 'letter63')"/>
+          <input type="text" disabled maxlength="1" id="letter63" class="box" oninput="moveToNext(this, 'letter64')"/>
+          <input type="text" disabled maxlength="1" id="letter64" class="box" oninput="moveToNext(this, 'letter65')"/>
+          <input type="text" disabled maxlength="1" id="letter65" class="box" oninput="moveToNext(this, 'botaoTentativa')" />
+        </div>
+        <!-- fim da div tentativa 6 -->
+        <!------------------------------------------------------------------------------------->
+        <div class="botoes">
+        <button class="btnEnviar" type="button" onclick="tentativas()" id="botaoTentativa">Enviar</button>
+        <button class="btnDesistir" type="button" onclick="Desistir()">Desistir</button>
+      </div>
+      </div>
+      <!-- fim da div principal -->
+    </main>
+
+    <footer></footer>
+  </body>
+</html>
