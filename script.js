@@ -1,18 +1,32 @@
 const palavras = [
-    "mango", "bravo", "primo", "velho", "caixa", "lobby", "duplo", "fugir",
-    "gelar", "monte", "piano", "digno", "tecla", "surdo", "risco", "tigre",
-    "blusa", "falar", "rocha", "pique", "lento", "globo", "turma", "vapor",
-    "bicho", "trevo", "zelar", "banjo", "morro", "ninja", "veloz", "farol",
-    "larva", "trono", "balde", "feroz", "gueto", "festa", "vadio", "salto",
-    "vigor", "balsa", "burro", "pavor", "torta", "verde", "prego", "corte",
-    "firma", "vinho", "pular", "saber", "baixa", "graxa", "ceder", "porta",
-    "grato", "tenso", "salva", "claro", "rival", "cinto", "largo", "fosco",
-    "valer", "cisne", "fazer", "ruivo", "trena", "molar", "berro", "pulso",
-    "rosto", "vazio", "frota", "musgo", "lenda", "custo", "nevar", "fosco",
-    "medir", "mural", "furar", "troca", "astro", "poeta", "navio", "bazar",
-    "tenaz", "vulto", "folha", "rosto", "fisco", "sonho", "touro", "trama",
-    "misto", "nobre", "ferro", "trovo", "vagar", "haste"
-];
+    "bravo", "velho", "caixa", "duplo", "fugir", "gelar", "monte", "digno", "tecla", 
+  "surdo", "risco", "tigre", "blusa", "falar", "rocha", "pique", "lento", "turma", 
+  "vapor", "bicho", "trevo", "zelar", "banjo", "morro", "ninja", "veloz", "farol", 
+  "larva", "trono", "balde", "feroz", "gueto", "festa", "vadio", "salto", "vigor", 
+  "balsa", "burro", "pavor", "torta", "verde", "prego", "corte", "firma", "pular", 
+  "saber", "baixa", "graxa", "ceder", "porta", "grato", "tenso", "salva", "claro", 
+  "rival", "cinto", "largo", "fosco", "valer", "cisne", "fazer", "ruivo", "trena", 
+  "molar", "berro", "pulso", "rosto", "vazio", "frota", "musgo", "lenda", "custo", 
+  "nevar", "medir", "mural", "furar", "troca", "astro", "poeta", "navio", "bazar", 
+  "tenaz", "vulto", "folha", "fisco", "sonho", "touro", "trama", "misto", "nobre", 
+  "ferro", "trovo", "vagar", "haste", "areia", "fugaz", "botao", "cobra", "prata", 
+  "feixe", "corpo", "linha", "lugar", "roubo", "troco", "torne", "reino", "praia", 
+  "raios", "manso", "cesta", "olhar", "focar", "sinal", "rodar", "pinho", "fruta", 
+  "livro", "duque", "noite", "fardo", "ruido", "sarau", "livre", "final", "quota", 
+  "cravo", "marca", "salve", "servo", "drama", "preco", "golpe", "maior", "morfo", 
+  "pouco", "pesco", "criar", "jovem", "batom", "casca", "plano", "frear", "praga", 
+  "justo", "couro", "torso", "carro", "danar", "letra", "tempo", "rumor", "bruma", 
+  "saiba", "canil", "brasa", "molho", "tutor", "jogar", "naval", "truco", "coral", 
+  "suave", "esqui", "trigo", "folia", "lutar", "molde", "fosso", "papel", "anual", 
+  "botas", "grave", "mover", "saldo", "cifra", "manto", "danos", "horda", "surto", 
+  "valsa", "casco", "plena", "trave", "mapas", "primo", "aroma", "bater", "modas", 
+  "brisa", "nevoa", "traje", "parar", "longo", "carpa", "manja", "reves", "ganho", 
+  "ruina", "impar", "valor", "temor", "prado", "aviso", "dente", "curva", "padre", 
+  "canto", "prumo", "ruiva", "ninho", "torre", "modos", "faixa", "banco", "lapis", 
+  "moral", "motim", "corvo", "pinto", "pavio", "bolsa", "grana", "forca", "grota", 
+  "viver"
+]
+let saidaAlert = document.getElementById('saidaAlert')
 const palavraCerta = palavras[Math.floor(Math.random() * palavras.length)];
 
 console.log(palavraCerta);
@@ -28,14 +42,16 @@ let tentativa = 1;
 function tentativas() {
     if (tentativa > 6) {
         disableAllInput();
-        alert("Você perdeu! A palavra era: " + palavraCerta);
+        saidaAlert.innerHTML = `Você perdeu!<br> A palavra era: ${palavraCerta}`
+        showAlert()
         return;
     }
 
     let acertou = verificarResposta(tentativa);
 
     if (acertou) {
-        alert("Parabéns!\nVocê acertou!");
+        saidaAlert.innerHTML = 'Parabéns!<br>Você acertou!'
+        showAlert()
         disableAllInput();
     } else {
         // Desbloquear a próxima linha para escrita
@@ -119,3 +135,20 @@ function Desistir(){
     tentativa = 10
     tentativas()
 }
+
+// Função para abrir o alerta
+function showAlert() {
+    document.getElementById('alert-background').style.display = 'flex';
+  }
+
+  // Função para fechar o alerta
+  function closeAlert() {
+    document.getElementById('alert-background').style.display = 'none';
+  }
+
+  // Exemplo de como abrir o alerta
+  window.onload = function() {
+    showAlert(); // Abre o alerta quando a página carrega
+  }
+
+
