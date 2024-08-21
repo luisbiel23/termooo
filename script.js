@@ -26,6 +26,18 @@ const palavras = [
   "moral", "motim", "corvo", "pinto", "pavio", "bolsa", "grana", "forca", "grota", 
   "viver"
 ]
+  
+document.querySelectorAll('input[type="text"]').forEach(function(input) {
+    input.setAttribute('pattern', '[A-Za-z]+');
+    input.setAttribute('title', 'Somente letras são permitidas');
+    input.setAttribute('required', true);
+
+    // Opcional: Adiciona validação em tempo real
+    input.addEventListener('input', function() {
+        this.value = this.value.replace(/[^A-Za-z]/g, '');
+    });
+});
+
 let saidaAlert = document.getElementById('saidaAlert')
 const palavraCerta = palavras[Math.floor(Math.random() * palavras.length)];
 
@@ -42,6 +54,10 @@ let tentativa = 1;
 function tentativas() {
     if (tentativa > 6) {
         disableAllInput();
+        document.getElementById('botaoTentativa').style.display = 'none';
+        document.getElementById('botaoReiniciar').style.alignItems = 'center';
+        document.getElementById('botaoReiniciar').style.justifyContent = 'center';
+        document.getElementById('botaoReiniciar').style.display = 'flex';
         saidaAlert.innerHTML = `Você perdeu!<br> A palavra era: ${palavraCerta}`
         showAlert()
         return;
@@ -50,6 +66,10 @@ function tentativas() {
     let acertou = verificarResposta(tentativa);
 
     if (acertou) {
+        document.getElementById('botaoTentativa').style.display = 'none';
+        document.getElementById('botaoReiniciar').style.alignItems = 'center';
+        document.getElementById('botaoReiniciar').style.justifyContent = 'center';
+        document.getElementById('botaoReiniciar').style.display = 'flex';
         saidaAlert.innerHTML = 'Parabéns!<br>Você acertou!'
         showAlert()
         disableAllInput();
@@ -151,4 +171,7 @@ function showAlert() {
     showAlert(); // Abre o alerta quando a página carrega
   }
 
+  function Reiniciar(){
+    location.reload(true)
+  }
 
