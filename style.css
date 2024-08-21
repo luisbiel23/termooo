@@ -15,6 +15,9 @@
   color: white;
   transition: 500ms;
 }
+.DisplayNone{
+  display: none;
+}
 .box:hover {
   background-color: #6e4318;
   cursor: pointer;
